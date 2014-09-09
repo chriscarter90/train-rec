@@ -1,0 +1,30 @@
+{
+  "browser": true,
+  "jquery": true,
+  "curly": false,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "es3": true,
+  "trailing": true,
+  "camelcase": true,
+  "indent": 2,
+  "globals": {
+    "it": true,
+    "describe": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "setFixtures": true,
+    "jasmine": true,
+    "expect": true,
+    "spyOn",
+    "spyOnEvent"
+  }
+}

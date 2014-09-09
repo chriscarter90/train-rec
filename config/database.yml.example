@@ -7,12 +7,12 @@ defaults : &defaults
 
 development: &DEV
   <<: *defaults
-  database: progress360_development
+  database: train-rec_development
 
 test: &TEST
   <<: *defaults
-  database: progress360_test
+  database: train-rec_test
 
 production:
   <<: *defaults
-  database: progress360_production
+  database: train-rec_production

@@ -1,0 +1,52 @@
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.swp
+*.swo
+tags
+
+## NETBEANS
+nbproject
+
+## Rubymine
+.idea
+
+## PROJECT::GENERAL
+coverage
+rdoc
+pkg
+
+config/database.yml
+config/carrierwave.yml
+config.ru
+*.cache
+*.log
+.project
+/tmp/**/*
+/tmp/*
+test/tmp
+config/initializers/personal_options.rb
+
+.rvmrc
+.rbenv-version
+.powrc
+.ruby-gemset
+.ruby-version
+
+/vendor/assets/components/
+/public/uploads/
+/spec/tmp/
+icons-*.png
+
+.vagrant
+Vagrantfile
