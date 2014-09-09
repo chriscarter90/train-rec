@@ -1,37 +1,23 @@
 <li class="activity">
-
   <%= form_for achievement, remote: true do |f| %>
+    <span class="label label-info pull-right achievement-date"><%= achievement.created_at %></span>
 
-    <!-- only display achievement.name (title) field if previously set -->
-    <% if !achievement.name.blank? %>
-    <h2 class="name show"> <%= achievement.name %> </h2>
-      <%= f.text_field  :name, class: "name input", 
-      id: "achievement-#{achievement.id}-name" %>
-    <% end %>
+    <p><%= achievement.description %></p>
 
-    <!-- display date and focus -->
-    <div class="focus-date">
-      <span class="focus focus-<%= achievement.focus_css_class %>">
-        <%= achievement.focus_name %>
-      </span>
-      <%= achievement.subject_element %>
-      <span class="date"><%= achievement.created_at %></span>
-    </div>
-
-    <p class="description show"> <%= achievement.description %> </p>
-    <%= f.text_area :description, class: "description input", 
-    id: "achievement-#{achievement.id}-description"%>
-
-    <footer>
-      <%= f.submit "Update", class: "button update" %>
-      <%= link_to "Delete", achievement_path(achievement), :method => :delete, remote: true, class: 'button remove alert' %>
-      <%= link_to "Edit", '#', class: 'button edit' %>
-    </footer>
-  <% end %>
-
-  <!-- Display uploaded image thumbnail -->  
+    <!-- Display uploaded image thumbnail -->
     <%= link_to achievement.asset.url, data: { lightbox: "achievement_#{achievement.id}"}, rel: "lightbox" do %>
       <%= image_tag achievement.asset.thumb.url, class: 'img-thumbnail' %>
     <% end if achievement.asset.url %>
 
+    <div class="clearfix">
+      <div class="pull-right">
+        <%= link_to '#', class: 'btn btn-primary' do %>
+          <span class="icon-pen"></span>
+        <% end %>
+        <%= link_to achievement_path(achievement), :method => :delete, remote: true, class: 'btn btn-primary' do %>
+          <span class="icon-trash"></span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </li>

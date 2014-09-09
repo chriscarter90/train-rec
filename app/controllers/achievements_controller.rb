@@ -1,9 +1,10 @@
 class AchievementsController < InheritedResources::Base
+  layout 'responsive'
   respond_to :html, :json
   actions :new, :create, :index, :destroy, :update
   belongs_to :tracker, optional: true
   before_filter :set_trackers
-  
+
   def create
     create! do |success, failure|
       success.html { redirect_to dashboard_path }
@@ -19,11 +20,11 @@ class AchievementsController < InheritedResources::Base
 
   private
 
-  # build_resource is called by InheritedResources on the :new and :create 
+  # build_resource is called by InheritedResources on the :new and :create
   # actions. However, we only want to set the name of focus on :new.
   def build_resource
     super
-    
+
     if parent && action_name == 'new'
       resource.name ||= parent.name
       resource.focus_id ||= parent.focus_id

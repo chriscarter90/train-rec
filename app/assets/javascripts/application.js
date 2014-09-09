@@ -60,7 +60,7 @@ $(function() {
   $(".focus-range").change( function(){
     setFocusSliderColor($(this));
   });
-}()); 
+}());
 
 // initialize the of slider positions
 $.each($(".focus-range"), function() {
@@ -79,3 +79,5 @@ function setFocusSliderColor(e) {
               + ')'
   );
 }
+
+$("select").select2({dropdownCssClass: 'dropdown-inverse'});

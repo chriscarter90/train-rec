@@ -1,34 +1,23 @@
-<%= f.label :name, class: 'mandatory' %>
-<%= f.text_field :name, 
-    :placeholder => 'What have you done today that you are proud of?' %>
-
-<%= f.label :description %>
-<%= f.text_area :description %>
+<div class="form-group">
+  <%= f.text_area :description, class: "form-control", rows: 5 %>
+</div>
 
 
 <!-- need to split out the form controls so we can re-use them in the inline Achievement Editing -->
+<div class="clearfix">
+  <div class="pull-left">
+    <div class="fileinput fileinput-new" data-provides="fileinput">
+      <span class="btn btn-primary btn-info btn-file">
+        <span class="fileinput-new"><span class="fui-photo"></span></span>
+        <span class="fileinput-exists"><span class="fui-gear"></span>  Change</span>
+        <%= f.file_field :asset %>
+      </span>
+      <span class="fileinput-filename"></span>
+      <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">×</a>
+    </div>
+  </div>
 
-<footer class="activity-form-controls">
-  <label class="secondary-button image-upload-fake" id="achievement-image-button">
-    Add a picture
-    <%= f.file_field :asset %>
-  </label>
-
-  <%= f.label :focus_id, 'Add focus' %>
-  <%= f.select :focus_id,
-    options_for_select(Focus.select_options, f.object.focus_id),
-    {},
-    { class: 'dropdown focus-select' } %>
-
-  <%= f.label :subject_id, 'Add subject' %>
-  <%= f.select :subject_id,
-    options_for_select(Subject.select_options, f.object.subject_id),
-    {},
-    { class: 'dropdown subject-select' } %>
-
-    <%= f.submit 'Done', class: 'button achievement-button', 
-      id: 'achievement_save' %>
-
-  <%= link_to "Cancel", dashboard_path, class: 'button secondary-button cancel', 
-      id: 'achievement_cancel' %>
-</footer>   
+  <%= button_tag(type: 'submit', class: 'btn btn-primary pull-right') do %>
+    <span class="icon-checkmark"></span>
+  <% end %>
+</div>

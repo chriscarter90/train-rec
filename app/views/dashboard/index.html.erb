@@ -1,17 +1,19 @@
-<section class="achievements">
-  <header class="pane-header achievements-pane-header">
-    <%= form_tag dashboard_path, :method => :get do %>
-      <%= label_tag :focus_id, 'Filter' %>
-      <%= select_tag :focus_id, options_for_select(filter_options, default_filter_option) %>
-    <% end %>
-  </header>
-  <div class="achievement-inline-form">
-    <%= form_for Achievement.new do |f| %>
-      <%= render 'achievements/forminline', :f => f %>
-    <% end %>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="nav nav-list nav-list-bricks">
+      <li>
+        <a href="#">
+          Firmer Passes
+          <span class="badge pull-right">Tech</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Keep Head Up
+          <span class="badge pull-right">Psych</span>
+        </a>
+      </li>
+    </ul>
+    <a href="#" class="btn btn-sm btn-info pull-right"><span class="icon-plus"></span></a>
   </div>
-
-  <ul>
-    <%= render @achievements %>
-  </ul>
-</section>
+</div>
