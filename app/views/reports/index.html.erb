@@ -1,0 +1,10 @@
+<div class="build-report">
+  <%= link_to 'Build Report', new_profile_report_path, class: "button" %>
+
+  <h2>View Previous Reports</h2>
+  <ul>
+    <% collection.each do |i| %>
+      <li><%= link_to i.name, edit_profile_report_path(i) %></li>
+    <% end %>  
+  </ul>
+</div>

@@ -1,0 +1,9 @@
+<% content_for :page_title, "New Tracker" %>
+
+<div class="l-standalone-page">
+  <h1 class="heading pane-header trackers-pane-header">Create new tracker</h1>
+
+  <%= form_for resource do |f| %>
+    <%= render 'form', :f => f %>
+  <% end %>
+</div>

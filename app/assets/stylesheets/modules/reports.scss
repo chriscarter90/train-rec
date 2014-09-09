@@ -1,0 +1,123 @@
+.build-report{
+    background-color: $profile-background-colour;
+    padding: 2em;
+    min-height: 100%;
+
+  .button{
+
+    padding: 1em;
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: white;
+  }
+  ul li {
+    list-style: none;
+    font-size: 1.2em;
+    margin-bottom: 0.8em;
+
+    a {
+      color: lighten( $focus-confidence, 20% );
+      text-decoration: none;
+    }
+  }
+}
+
+.new-report {
+  
+  .report-header {
+    width: 100%;
+    padding: 2em;
+    padding-bottom: 3em;
+    text-align: center;
+    border-bottom: 2px $profile-background-colour solid;
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 1.7em;
+    }
+
+    h1, h2 {
+      width: 48%;
+      float: left;
+    }
+  }
+
+  h2.heading {
+    width: 100%;
+    padding: 0.5em 1em;
+    border-bottom: 2px $profile-background-colour solid;
+  }
+
+  .border-top {
+    border-top: 2px $profile-background-colour solid;
+    padding-top: 0.5em;
+    clear: both;
+  }
+
+  .overview {
+    padding-left: 15%;
+  }
+
+
+  div {
+    margin-top: 1em;
+    width: 100%;
+    float: left;
+
+    label {
+      font-weight: bold;
+      text-align:right;
+      font-size: 1.8em;
+      width: 15%;
+      display: inline-block;
+      vertical-align: top;
+      min-width: 195px;
+      margin-right: 10px;
+    }
+    textarea, input {
+      vertical-align: top;
+      margin-bottom: 1em;
+      border:solid 1px $light-grey;
+      width: 63%;
+      min-width: 165px;
+      min-height: 10rem;
+    }
+  }
+
+  .table {
+    width: 75%;
+    margin-left: 15%;
+  
+    .even {
+      background-color: $default-background-colour;
+    }
+
+    thead {
+      background-color: $light-grey;
+    }
+  }
+
+  .button {
+    float: right;
+    margin-bottom: 2em;
+    padding: .4em .7em;
+    font-size: 1.3em;
+  }
+  .save {
+    margin-right: 9%;
+  }
+
+  .edit {
+    display: none;
+  }
+
+}

@@ -1,0 +1,3 @@
+@function relative-font-size ($rems) {
+  @return $rems / $rem * 10;
+}

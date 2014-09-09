@@ -1,0 +1,10 @@
+<% content_for :page_title, "Trackers" %>
+
+<header class="pane-header trackers-pane-header">
+  <h1>Trackers</h1>
+  <%= link_to "Create new tracker", new_tracker_path, class: 'add' %>
+</header>
+
+<ol class="activity-list tracker-list">
+  <%= render @trackers %>
+</ol>

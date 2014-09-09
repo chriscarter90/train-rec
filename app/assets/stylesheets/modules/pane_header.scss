@@ -1,0 +1,81 @@
+.pane-header {
+  position: relative;
+  padding: 1rem 2rem;
+
+  font-size: 2rem;
+  line-height: 3rem;
+
+  color: $tracker-button-text-colour;
+  background-color: $tracker-button-colour;
+
+  .add {
+    @include sprite-2x($icon-sprite, 'plus', $offset-x: 22px, $offset-y: 26px);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 4.5rem;
+    display: inline-block;
+
+    text-indent: -999em;
+    color: inherit;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  .count {
+    display: inline-block;
+    height: 30px;
+    min-width: 30px;
+    padding: 0 4px;
+    margin: -2px 0 -4px 2ex;
+
+    border-radius: 17px;
+    border: 2px solid $tracker-highlight-colour;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+
+    font-size: relative-font-size(1.1rem);
+    line-height: 26px;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  // Variants
+  &.trackers-pane-header {
+    .count:after {
+      position: absolute;
+      top: 0;
+      display: inline-block;
+      height: 45px;
+      width: 45px;
+      margin-left: 1rem;
+
+      background: image-url("chevrons_orange.png") no-repeat;
+      background-size: 45px 45px;
+
+      content: ''
+    }
+  }
+
+  &.achievements-pane-header {
+    background-color: $achievement-button-colour;
+
+    .count {
+      border-color: $achievement-highlight-colour;
+    }
+  }
+
+  // States
+  &.active .add, .add:active {
+    @include transition(0.2s background-color);
+    @include sprite-2x($icon-sprite, 'plus_red', $offset-x: 22px, $offset-y: 26px);
+
+    background-color: $tracker-button-text-colour;
+  }
+
+  &.achievements-pane-header.active .add, &.achievements-pane-header .add:active {
+    @include sprite-2x($icon-sprite, 'plus_green', $offset-x: 22px, $offset-y: 26px);
+  }
+}

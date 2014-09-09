@@ -1,0 +1,58 @@
+// Text
+$text-colour: #333;
+$rem: 9;
+
+// Borders
+$border-colour: #ccc;
+
+// Buttons
+$button-colour: #809e35;
+$button-text-colour: #fff;
+$secondary-button-text-colour: $text-colour;
+$secondary-button-colour: #fff;
+$tracker-button-colour: #f25a00;
+$tracker-button-text-colour: #fff;
+$tracker-highlight-colour: #f58340;
+$achievement-button-colour: #809e35;
+$achievement-button-text-colour: #fff;
+$achievement-highlight-colour: #bed561;
+$done-button-colour: #b4cf49;
+$select-border-colour: #DCDCDC;
+
+// Links
+$link-colour: blue;
+
+$hashtag-color: #80ADE8;
+
+// States
+$error-colour: #ff0000;
+$active-colour: transparentize(#b4cf49, 0.5);
+
+// Profile
+$profile-background-colour: #4A5459;
+$profile-text-colour: #fff;
+
+$grey: #6D7573;
+$light-grey: #CFCFCF;
+$form-control-footer-color: #F6F6F6; /* almost white */
+
+$default-background-colour: #EAEAEA; /* very light grey */
+
+// Focus Colors
+$focus-general:         #F25A00;
+$focus-communication:   #CC6600;
+$focus-collaboration:   #6AA877;
+$focus-confidence:      #567CBA;
+$focus-creativity:      #BF5368;
+$focus-empathy:         #9C874D;
+$focus-independence:    #009094;
+$focus-persistence:     #7B6997;
+$focus-problem-solving: #B81231;
+$focus-responsibility:  #D2AA1D;
+
+// New Layout
+$sidebar-width: 25%;
+
+// ML-133 introduced Global Navigation
+$global-nav-height: 50px;
+$global-nav-active-color: $profile-background-colour;

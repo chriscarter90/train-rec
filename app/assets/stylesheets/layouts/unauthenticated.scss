@@ -1,0 +1,31 @@
+.l-unauthenticated {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #4A5459;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+
+  .unauthenticated-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .field {
+    margin-bottom: 2rem;
+  }
+
+  form {
+    width: 400px;
+    margin: 0 auto;
+    margin-left:50px;
+  }
+}
+
+.background-fill {
+  width: 100%;
+  height: 100%;
+  background-color: #4A5459;
+}

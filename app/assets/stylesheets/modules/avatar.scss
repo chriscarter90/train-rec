@@ -1,0 +1,54 @@
+.avatar {
+  position: relative;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+
+  .avatar-cropper {
+    position: relative;
+    z-index: 0;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+
+    border-radius: 90px;
+    border: 10px solid #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    background-color: #fff;
+  }
+
+  .avatar-constrainer {
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    line-height: 320px;
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    z-index: 2;
+  }
+
+  &:after {
+    @include transform(translateY(50%) scale(1, 0.1) translateY(-50%));
+
+    display: block;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    width: 180px;
+    height: 180px;
+
+    border-radius: 90px;
+    background-color: rgba(0,0,0,0.2);
+
+    content: '';
+    left: 0;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    width: 100%;
+  }
+}

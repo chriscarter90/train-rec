@@ -1,0 +1,59 @@
+<%= content_for :sidebar do %>
+  <%= render 'short_profile', user: current_user %>
+<% end %>
+
+<div class="full-profile">
+  <section class="col-wrapper">
+    <header>
+      <h2 class="heading about-me">About me</h2>
+
+      <%= link_to "Edit profile", edit_profile_path, class: "button edit" %>
+      <%= link_to "Focus areas", profile_focus_positions_path, class: "button edit" %>
+      <%= link_to "Go back", dashboard_path, class: "secondary-button" %>
+    </header>
+    
+    <div class="col1">
+      <p><%= current_user.about_me %></p>
+
+      <% if current_user.about_me_as_a_learner.present? %>
+        <section>
+          <h2 class="sub-heading">About me as a learner</h2>
+          <p><%= current_user.about_me_as_a_learner %></p>
+        </section>
+      <% end %>
+      <% if current_user.hobbies_and_interests.present? %>
+        <section>
+          <h2 class="sub-heading">My hobbies and interests</h2>
+          <p><%= current_user.hobbies_and_interests %></p>
+        </section>
+      <% end %>
+      <% if current_user.big_ambitions.present? %>
+        <section>
+          <h2 class="sub-heading">My big ambitions</h2>
+          <p><%= current_user.big_ambitions %></p>
+        </section>
+      <% end %>
+      <% if current_user.favourite_things.present? %>
+        <section>
+          <h2 class="sub-heading">3 favourite things</h2>
+          <p><%= current_user.favourite_things %></p>
+        </section>
+      <% end %>
+      <% if current_user.best_thing_this_week.present? %>
+        <section>
+          <h2 class="sub-heading">Best thing this week</h2>
+          <p><%= current_user.best_thing_this_week %></p>
+        </section>
+      <% end %>
+    </div>
+
+    <div class="col2">
+      <%= form_for current_user, url: profile_path do |user_form| %>
+        <%= user_form.fields_for :focus_positions do |positions_form| %>
+          <%= render partial: 'focus_positions/form', locals: { focus_position: positions_form.object.decorate, form: positions_form } %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </section>
+</div>

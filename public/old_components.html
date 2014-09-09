@@ -1,0 +1,262 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Progress 360 component guide</title>
+  <link rel="stylesheet" href="/assets/application.css" />
+  <style>
+  .component-guide-heading {
+    font-size: 5rem;
+    line-height: 6rem;
+    margin-bottom: 3rem;
+  }
+  .component-heading {
+    font-size: 3rem;
+    line-height: 5rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 2rem;
+  }
+  .component {
+    margin-bottom: 3rem;
+  }
+  h4 {
+    margin: 1rem 0;
+  }
+
+  </style>
+</head>
+<body style="padding: 3rem">
+  <h1 class="component-guide-heading">Progress 360 component guide</h1>
+
+  <section class="component">
+    <h2 class="component-heading">Headings</h2>
+
+    <div class="heading">Heading - I'm a leaf on the wind, I'm a leaf on the wind, I'm a leaf on the wind</div>
+    <div class="sub-heading">Sub heading - Oh god oh god we're all gonna die, Oh god oh god we're all gonna die, Oh god oh god we're all gonna die</div>
+
+  </section>
+
+  <section class="component">
+    <h3 class="component-heading">Form fields</h3>
+
+    <p>
+      <input type="text" placeholder="I'm a leaf on the wind" />
+      <input type="text" value="Oh god oh god we're all gonna die" />
+    </p>
+
+    <p>
+      <input type="email" placeholder="wash@serenity.ship" />
+    </p>
+
+    <p>
+      <button class="secondary-button image-upload-fake" >Upload profile picture</button>
+        <!-- FAKE Image Upload (workaround) Addapted from: http://www.quirksmode.org/dom/inputfile.html -->
+        <!-- Fake upload button allows us more css control -->
+        <button class="secondary-button image-upload-fake" >Upload profile picture</button>
+        <!-- The real image upload button -->
+        <input type="file" class="image-upload-real" id="learner_avatar"/>
+
+        <!-- Fake Upload Button assumes we have JQUery -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <!--  Font awesome is optional -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <script src="/assets/application.js"> </script>
+    </p>
+
+    <p>
+      <input type="date" />
+    </p>
+
+    <p>
+      <input type="number" value="2013-10-10" />
+    </p>
+
+    <p>
+      <select>
+        <option>Something</option>
+        <option>Maybe this</option>
+        <option>Or this</option>
+      </select>
+    </p>
+
+    <p>
+      <textarea></textarea>
+    </p>
+
+    <p>
+      <label>
+        Field with label
+        <input type="text" value="" />
+      </label>
+    </p>
+
+  </section>
+
+  <section style="max-width: 500px;" class="component">
+    <h3 class="component-heading">Focus Selector</h3>
+
+    <select class="dropdown" id="tracker_focus_id">
+      <option>Communication</option>
+      <option>Compassion</option>
+      <option>Community</option>
+      <option>Cooperation</option>  
+    </select>
+
+  </section>
+
+  <section class="component">
+    <h2 class="component-heading">Focus Lables / Colors</h2>
+
+    <div class="focus focus-general">General
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-communication">Communication
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-collaboration">Collaboration
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-confidence">Confidence
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-empathy">Empathy
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-independence">Independence
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-persistence">Persistence
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-problem-solving">Problem solving
+      <span class="arrow-left"></span>
+    </div>
+    <br />
+    <div class="focus focus-responsibility">Responsibility
+      <span class="arrow-left"></span>
+    </div>
+
+<br />
+<pre>
+/* Available SASS Variables for Focus Styling */
+$focus-communication:   #CC6600;
+$focus-collaboration:   #6AA877;
+$focus-confidence:      #567CBA;
+$focus-creativity:      #BF5368;
+$focus-empathy:         #9C874D;
+$focus-independence:    #009094;
+$focus-persistence:     #7B6997;
+$focus-problem-solving: #B81231;
+$focus-responsibility:  #D2AA1D;
+</pre>
+
+  </section>
+
+
+  <section class="component">
+    <h3 class="component-heading">.button, .secondary-button</h3>
+
+    <p>
+      <input type="submit" class="button" value="Input button"/>
+      <a href="#" class="secondary-button">Secondary link button</a>
+    </p>
+    <p>
+      <a href="#" class="button">Link button</a>
+      <button class="secondary-button">Secondary button tag</button>
+    </p>
+    <p>
+      <button class="button">Button tag</button>
+      <input type="submit" class="secondary-button" value="Secondary input button">
+    </p>
+    <p>
+      <button class="button edit">Edit button with icon</button>
+    </p>
+
+    <h4>.secondary-button.slim-button</h4>
+    <p><button class="secondary-button slim-button">Slim button</button></p>
+
+    <h4>.secondary-button.slim-button.remove</h4>
+
+    <p><button class="secondary-button slim-button remove">End Tracker</button></p>
+    <h4>.secondary-button.slim-button.edit</h4>
+    <p><button class="secondary-button slim-button edit">Edit</button></p>
+
+    <h4>.button.icon-button.done</h4>
+    <p><button class="button icon-button done">Done</button></p>
+
+    <h4>.secondary-button.icon-button.edit</h4>
+    <p><button class="secondary-button icon-button edit">Edit</button></p>
+  </section>
+
+  <section style="max-width: 400px" class="component">
+    <h3 class="component-heading">.activity-list</h3>
+
+    <ol class="activity-list">
+      <li>
+        <h2 class="sub-heading">Do an activity</h2>
+        <p>Do this a hundred times to be crowned high lord emperor of the multiverse.</p>
+      </li>
+    </ol>
+
+  </section>
+
+  <section style="max-width: 500px;" class="component">
+    <h3 class="component-heading">.pane-header</h3>
+
+    <div class="pane-header">
+      <h2>Pane header <span class="count">2</span></h2>
+      <a href="#" class="add">Add one</a>
+    </div>
+
+    <h4>.pane-header.active</h4>
+    <div class="pane-header active">
+      <h2>Pane header <span class="count">34500</span></h2>
+      <a href="#" class="add">Add one</a>
+    </div>
+
+    <h4>.pane-header.trackers-pane-header</h4>
+    <div class="pane-header trackers-pane-header">
+      <h2>Trackers <span class="count">120</span></h2>
+      <a href="#" class="add">Add one</a>
+    </div>
+
+    <h4>.pane-header.achievements-pane-header.active</h4>
+    <div class="pane-header trackers-pane-header active">
+      <h2>Trackers <span class="count">11</span></h2>
+      <a href="#" class="add">Add one</a>
+    </div>
+
+    <h4>.pane-header.achievements-pane-header</h4>
+    <div class="pane-header achievements-pane-header">
+      <h2>Achievements <span class="count">0</span></h2>
+      <a href="#" class="add">Add one</a>
+    </div>
+
+    <h4>.pane-header.achievements-pane-header.active</h4>
+    <div class="pane-header achievements-pane-header active">
+      <h2>Achievements <span class="count">4556457</span></h2>
+      <a href="#" class="add">Add one</a>
+    </div>
+  </section>
+
+  <section class="component">
+    <h3 class="component-heading">.avatar</h3>
+
+    <div class="avatar">
+      <div class="avatar-cropper">
+        <div class="avatar-constrainer">
+          <img src="/assets/default_avatar.png" alt="Avatar of Hoburn Washburne" />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>

@@ -1,0 +1,37 @@
+<div>
+  <div>
+    <h1>Trackers</h1>
+    <table id="datatable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>User</th>
+          <th>Difficulty</th>
+          <th>Focus</th>
+          <th>Created at</th>
+          <th>Ended at</th>
+          <th>Active?</th>
+          <th>Achievements</th>
+          <th>Last achievement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @trackers.each do |tracker| %>
+          <tr>
+            <td><%= tracker.name %></td>
+            <td><%= tracker.description %></td>
+            <td><%= tracker.learner.name %></td>
+            <td><%= tracker.difficulty.humanize %></td>
+            <td><%= tracker.focus_name %></td>
+            <td><%= pretty_date tracker.created_at %></td>
+            <td><%= pretty_date tracker.trashed_at %></td>
+            <td><%= tracker.active? %></td>
+            <td><%= tracker.achievements_count %></td>
+            <td><%= pretty_date(tracker.achievement_date) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+</div>

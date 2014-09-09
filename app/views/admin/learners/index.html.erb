@@ -1,0 +1,46 @@
+<div>
+  <div>
+    <h1>Learners</h1>
+    <%= link_to 'Create learner', new_admin_learner_path, class: 'button' %>
+
+    <table id="datatable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>About me</th>
+          <th>About me as a learner</th>
+          <th>Hobbies and interests</th>
+          <th>Big ambitions</th>
+          <th>Favourite things</th>
+          <th>Best thing this week</th>
+          <th>Active trackers</th>
+          <th>Inactive trackers</th>
+          <th>Last achievement date</th>
+          <th>Last achievement description</th>
+          <th>Number of achievements</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @learners.each do |learner| %>
+          <tr>
+            <td><%= link_to learner.name, edit_admin_learner_path(learner) %></td>
+            <td><%= learner.age %></td>
+            <td><%= learner.about_me %></td>
+            <td><%= learner.about_me_as_a_learner %></td>
+            <td><%= learner.hobbies_and_interests %></td>
+            <td><%= learner.big_ambitions %></td>
+            <td><%= learner.favourite_things %></td>
+            <td><%= learner.best_thing_this_week %></td>
+            <td><%= learner.active_count %></td>
+            <td><%= learner.inactive_count %></td>
+            <td><%= learner.achievement_date %></td>
+            <td><%= learner.achievement_description %></td>
+            <td><%= learner.achievements_count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+</div>
+  

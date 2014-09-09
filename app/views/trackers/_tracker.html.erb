@@ -1,0 +1,15 @@
+<li>
+  <h2 class="sub-heading"><%= tracker.name %></h2>
+  <p><%= tracker.description %></p>
+  <!-- add focus_name to class so we can change the color in css -->
+  <div class="focus focus-<%= tracker.focus_css_class %>">
+    <%= tracker.focus_name %>
+    <span class="arrow-left"></span>
+  </div>
+  <div class="actions">
+    <%= form_for tracker, method: :delete, html: { id: nil } do %>
+      <%= button_tag "End Tracker", class: "secondary-button slim-button remove" %>
+    <% end %>
+    <%= link_to "Done", new_tracker_achievement_path(tracker), class: "button icon-button done" %>
+  </div>
+</li>

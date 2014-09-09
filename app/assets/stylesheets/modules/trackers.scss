@@ -1,0 +1,231 @@
+// Place all the styles related to the trackers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.trackers {
+  .active {
+    color: $tracker-button-colour;
+    border-right: 2px solid white;
+  }
+  header {
+    border-right: 2px solid black;
+  }
+
+  ul > li {
+    padding: 1rem;
+    border-bottom: 1px solid $light-grey;
+    border-right: 2px solid black;
+
+    a {
+      color: $grey;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: bold;
+
+      .fa {
+        float: right;
+      }
+    }
+  }
+
+  a {
+    display: block;
+  }
+}
+
+.tracker-inline-form {
+  /* display:none; */
+}
+
+.tracker-inline-form label {
+    display: none;
+}
+
+#tracker_name, #tracker_description {
+    width: 96%;
+    border: none;
+    border-radius: 0;
+}
+
+#tracker_name {
+    font-size: 1.7em;
+
+    border-bottom: 1px dashed $light-grey;
+
+}
+#tracker_description {
+    font-size: 1.2em;
+    min-height: 70px;
+
+}
+
+#tracker_save, #tracker_cancel {
+    height: 2em;
+    width: 100px;
+    float: right;
+    margin: 0.5em;
+    font-size: 1.3em;
+}
+
+#tracker_save {
+  width: 130px;
+}
+
+.focus-wrapper {
+   margin-left: 10px;
+}
+
+.focus {
+  border-left: 5px solid red;
+  color: white;
+  height: 20px;
+  width: 120px;
+  padding-left:0.5em;
+  padding-right:0px;
+  padding-top:0px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@mixin focus-label($color) {
+  background-color: $color;
+  border-left: 5px solid darken( $color, 20% );
+}
+
+
+.focus-general         { @include focus-label( $focus-general ) }
+.focus-communication   { @include focus-label( $focus-communication ) }
+.focus-collaboration   { @include focus-label( $focus-collaboration ) }
+.focus-confidence      { @include focus-label( $focus-confidence ) }
+.focus-creativity      { @include focus-label( $focus-creativity ) }
+.focus-empathy         { @include focus-label( $focus-empathy ) }
+.focus-independence    { @include focus-label( $focus-independence ) }
+.focus-persistence     { @include focus-label( $focus-persistence ) }
+.focus-problem-solving { @include focus-label( $focus-problem-solving ) }
+.focus-responsibility  { @include focus-label( $focus-responsibility ) }
+
+.tracker {
+  h2, ul, p {
+    padding: 1rem;
+  }
+
+  header {
+    background-color: #FFEFE4;
+    @include pie-clearfix;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    background-color: inherit;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $text-colour;
+    float: left;
+  }
+
+}
+
+.tracker footer {
+  background-color: #F6F6F6;
+  padding: 7px 15px;
+
+  ul {
+    height: 100%;
+    list-style: none;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: flex-end;
+    -webkit-align-items: flex-end;
+  }
+  ul > li {
+    margin-left: 5px;
+    font-weight: bold;
+
+  }
+
+}
+
+.new_tracker {
+  select {
+    font-size: 1.1em;
+  }
+
+  label {
+    width: 100px;
+    min-width: 0px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top:-5px;
+  }
+  #tracker_description {
+    font-size: 1.4em;
+  }
+
+}
+.new-tracker-form {
+  padding-left: 10px;
+  label {
+    font-size: 1.6em;
+    width: 160px;
+    margin-top: -1.2em;
+  }
+}
+
+#focus_select {
+  margin:10px 0;
+}
+
+label[for="tracker_name"],label[for="tracker_description"] {display: none;}
+
+
+#tracker-done {
+
+  #tracker-details {
+    background-color: #FEEFE6;
+    padding: 1em 0 0 1em;
+
+    .sub-heading {
+      font-size: 2em;
+      width: 70%;
+    }
+    .focus, .difficulty, .subject {
+      float: right;
+      margin-right: 10px;
+      margin-top: 1.0rem;
+    }
+    p { width: 70%; padding-bottom: 15px;}
+
+    form {
+      width: 28%;
+      float: right;
+      margin-top: -0.5em;
+    }
+    .archive {
+      float: right;
+
+    }
+
+    /* h2, p, form { border: 1px green solid; } */
+  }
+
+  .helptext  {
+    margin-left: 1em;
+    margin-bottom: 0;
+    margin-top: 1em;
+    padding: 0;
+  }
+
+  p {
+    font-size: 1.5em;
+    width: 80%;
+
+  }
+  #achievement_description {
+    margin-top: 0;
+  }
+
+  #achievement_name, #achievement_focus_id, .activity-list footer, .subject-select {
+    display: none !important;
+  }
+}

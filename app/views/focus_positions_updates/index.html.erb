@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <% @foci.each do |focus| %>
+        <th><%= focus.name %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |update| %>
+      <tr>
+        <td><%= update.created_at.strftime("%d-%m-%Y") %></td>
+        <% @ids.each do |id| %>
+          <td><%= update.data[id] %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

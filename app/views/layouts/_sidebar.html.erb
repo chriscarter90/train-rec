@@ -1,0 +1,40 @@
+<section class="profile">
+  <div class="avatar">
+    <div class="avatar-cropper">
+      <div class="avatar-constrainer">
+        <% if current_user.avatar? %>
+          <%= image_tag(current_user.avatar_url) %>
+        <% else %>
+          <%= image_tag "default_avatar.png", alt: "Avatar of %s" % current_user %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<!-- remove View full profile link as superceded by global nav "My Profile" tab
+  <%= link_to profile_path, class: 'view-profile' do %>
+    View full profile
+    <%= fa_icon 'angle-double-right' %>
+  <% end %>
+-->
+  <header class="details">
+    <h1><%= current_user.name %></h1>
+    <h2><%= current_user.try(:class_year) %></h2>
+  </header>
+</section>
+
+<section class="trackers">
+  <header class="pane-header">
+    <h1>My Trackers <span class="count"><%= @trackers.count %></span></h1>
+    <%= link_to "Add", new_tracker_path, class: 'add' %>
+  </header>
+  <ul>
+    <% @trackers.each do |tracker| %>
+      <%= content_tag :li, class: active?(tracker) do %>
+        <%= link_to new_tracker_achievement_path(tracker), class: active?(tracker) do %>
+          <%= tracker.name %>
+          <%= fa_icon 'caret-right' %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</section>

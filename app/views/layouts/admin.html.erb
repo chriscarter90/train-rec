@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Progress360 - Admin" %></title>
+
+    <%= stylesheet_link_tag    "admin" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to 'Progress360', root_path %></h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <%= active_link_to 'Learners', admin_learners_path %>
+          <%= active_link_to 'Trackers', admin_trackers_path %>
+          <%= active_link_to 'Achievements', admin_achievements_path %>
+        </ul>
+      </section>
+    </nav>
+
+    <%= yield %>
+    <%= javascript_include_tag "admin" %>
+  </body>
+</html>

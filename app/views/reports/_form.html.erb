@@ -1,0 +1,67 @@
+<div class="new-report">
+  <header class="report-header">
+    <h1><%= current_user.name %></h1>
+    <h2><%= resource.name %></h2>
+  </header>
+
+  <%= form_for [:profile, resource] do |f| %>
+
+    <h2 class="heading overview">Overview</h2>
+
+    <div>
+      <%= f.label :about_me %>
+      <%= f.text_area :about_me%>
+    </div>
+
+    <h2 class="heading border-top">Activity Summary</h2>
+    <table class="table">
+      <thead>
+        <th>Focus Area</th>
+        <th>Easy Trackers</th>
+        <th>Medium Trackers</th>
+        <th>Hard Trackers</th>
+        <th>Logged Activity</th>
+      </thead>
+      <tbody>
+        <% @foci.each do |focus| %>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td><%= focus.name %></td>
+            <td><%= @current_trackers.select { |c| c.focus == focus && c.easy? }.count %></td>
+            <td><%= @current_trackers.select { |c| c.focus == focus && c.medium? }.count %></td>
+            <td><%= @current_trackers.select { |c| c.focus == focus && c.hard? }.count %></td>
+            <td><%= @achievements.select { |a| a.focus == focus }.count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div>
+      <%= f.label :where_i_started, 'Where I started' %>
+      <%= f.text_area :where_i_started %>
+    </div>
+
+    <div>
+      <%= f.label :where_i_am_now, 'Where I am now' %>
+      <%= f.text_area :where_i_am_now %>
+    </div>
+
+    <div>
+      <%= f.label :where_i_want_to_be, 'Where I want to be' %>
+      <%= f.text_area :where_i_want_to_be %>
+    </div>
+
+    <div>
+      <%= f.label :teacher_comment %>
+      <%= f.text_area :teacher_comment %>
+    </div>
+
+    <%= f.submit 'Save', class: 'button save' %>
+    <%= link_to "Cancel", profile_reports_path, class: 'button secondary-button cancel' %>
+
+  <% end %>
+
+  <h2 class="heading border-top">Appendix</h2>
+  <ul>
+    <%= render @achievements %>  
+  </ul>
+</div>

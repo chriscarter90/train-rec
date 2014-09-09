@@ -1,0 +1,13 @@
+.full-profile {
+  .field, .avatar {
+    margin-bottom: 2rem;
+  }
+
+  .field span {
+    min-width: 100px;
+  }
+
+  textarea {
+    min-width: 500px;
+  }
+}

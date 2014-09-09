@@ -1,0 +1,83 @@
+// Place all the styles related to the FocusPositions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.focus_positions_wrapper{
+  background-color: $form-control-footer-color;
+  height: 100%;
+}
+
+/* Change the Slider Button Color Here */
+.focus-range::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:#FBFBFB;
+    height:30px;
+    width:30px;
+    border-radius: 5px;
+    border: 2px solid #809E35;
+}
+
+.focus-range::-webkit-slider-thumb:before {
+  background-color: yellow;
+}
+
+/* ONLY applicable if you want to display the value while sliding */
+
+.focus-header {
+  background-color: #333333;
+  margin-bottom: 1em;
+}
+
+.edit_learner {
+  background-color: #4A5459;
+
+
+  label {
+      display:block;
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-bottom: 1em;
+  }
+
+  .focus-range {
+    width: 50%;
+    -webkit-appearance: none !important;
+    height:12px;
+    border-radius: 8px;
+    background:-webkit-gradient(linear,center top, center bottom, from(#CFDCDD),to(#DFE9EA),color-stop(50%,#DFE9EA));
+  -webkit-transition: background 450ms;
+    transition: background 450ms;
+    margin-bottom: 1em;
+  }
+
+  .focus-range, label {
+    margin-left:20px;
+  }
+
+  .general         { color: $focus-general         }
+  .communication   { color: $focus-communication   }
+  .collaboration   { color: $focus-collaboration   }
+  .confidence      { color: $focus-confidence      }
+  .creativity      { color: $focus-creativity      }
+  .empathy         { color: $focus-empathy         }
+  .independence    { color: $focus-independence    }
+  .persistence     { color: $focus-persistence     }
+  .problem-solving { color: $focus-problem-solving }
+  .responsibility  { color: $focus-responsibility  }
+
+  output, b {
+    font-size: 2em;
+  }
+  footer {
+    margin-top:1em;
+
+    #focus_positions_cancel, #focus_positions_save {
+        height: 2em;
+        width: 100px;
+        float: right;
+        margin: 0.5em;
+        font-size: 1.3em;
+    }
+  }
+}
+

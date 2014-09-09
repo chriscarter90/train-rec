@@ -1,0 +1,376 @@
+<!-- These Styles ONLY Apply to the Content Guide -->
+<style scoped>
+#main {
+  padding-left: 2em;
+}
+.component-guide-heading {
+  font-size: 5rem;
+  line-height: 6rem;
+  margin-bottom: 3rem;
+}
+.component-heading {
+  font-size: 3rem;
+  line-height: 5rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+}
+.component {
+  margin-bottom: 3rem;
+}
+h4 {
+  margin: 1rem 0;
+}
+</style>
+
+<% content_for :page_title do %>
+  Progress 360 component guide
+<% end %>
+
+<% content_for :sidebar do %>
+  <section class="profile">
+    <h3 class="component-heading">.avatar</h3>
+
+    <div class="avatar">
+      <div class="avatar-cropper">
+        <div class="avatar-constrainer">
+          <img src="/assets/default_avatar.png" alt="Avatar of Hoburn Washburne" />
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+
+<h1 class="component-guide-heading">Progress 360 component guide</h1>
+
+<section class="component">
+  <h2 class="component-heading">Headings</h2>
+
+  <div class="heading">Heading - I'm a leaf on the wind, I'm a leaf on the wind, I'm a leaf on the wind</div>
+  <div class="sub-heading">Sub heading - Oh god oh god we're all gonna die, Oh god oh god we're all gonna die, Oh god oh god we're all gonna die</div>
+
+</section>
+<br /> <br />
+
+<section>
+  <h3 class="component-heading">Upload Button</h3>
+
+  <label class="secondary-button image-upload-fake">
+    Upload Image
+    <input type="file" />
+  </label>
+</section>
+
+<br /> <br />
+
+<section class="component">
+  <h3 class="component-heading">Setting Focus Levels</h3> 
+    <h4> &lt;input type&#61;&quot;range&quot; class&#61;&quot;focus-range&quot;&gt;</h4>
+  <form class="edit_learner">
+    <h2 class="pane-header focus-header">Where do you think you are now? </h2>
+    <label class="communication"> Communication </label>
+    <input type="range" class="focus-range" min="0" max="1" step="0.01" value ="0.3">
+
+    <br /> <br />
+
+    <label class="collaboration"> Collaboration </label>
+    <input type="range" class="focus-range" min="0" max="1" step="0.01" value="0.7">
+
+    <footer class="activity-form-controls">
+      <input class="button" name="commit" type="submit" value="Save" id='focus_positions_save' />
+      <a class="button secondary-button cancel" href="/learner" id="focus_positions_cancel">Cancel</a>
+    </footer>
+
+  </form>
+
+</section>
+<br /> <br />
+
+<section>
+  <hr />
+  <h3 class="component-heading">Tracker Composite </h3> 
+      <article class="tracker activity">
+        <header>
+        <h2 class="sub-heading name">Creative tracker Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod lipsum</h2>
+          <span class="focus focus-general">
+            General
+          </span>
+          <span class="difficulty">Easy</span>
+        </header>
+
+        <p>Completed this no probs</p>
+    
+        <a data-lightbox="achievement_58" href="/uploads/achievement/asset/58/image.jpg">
+        <img alt="Thumb image" class="img-thumbnail" src="/uploads/achievement/asset/58/thumb_image.jpg" />
+        </a>
+      </article>
+</section>
+
+
+<section>
+  <h3 class="component-heading">Achievement Composite </h3>
+
+  <ul> 
+      <li class="activity">
+        <header>
+        <h2 class="sub-heading name">Creative tracker Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod lipsum</h2>
+          <span class="focus focus-general">
+            General
+          </span>
+          <span class="difficulty">Easy</span>
+        </header>
+
+        <p>Completed this no probs</p>
+    
+        <a data-lightbox="achievement_58" href="/uploads/achievement/asset/58/image.jpg" >
+        <img alt="Thumb image" class="img-thumbnail" src="/uploads/achievement/asset/58/thumb_image.jpg" />
+        </a>
+      </li>
+
+      <li class="activity">
+        <header>
+        <h2 class="sub-heading name">Creative tracker Lorem ipsum dolor </h2>
+          <span class="focus focus-creativity">
+            Creativity
+          </span>
+          <span class="difficulty">Medium</span>
+        </header>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+        <a data-lightbox="achievement_58" href="/uploads/achievement/asset/58/image.jpg" >
+        <img alt="Thumb image" class="img-thumbnail" src="/uploads/achievement/asset/58/thumb_image.jpg" />
+        </a>
+      </li>
+
+      <li class="activity">
+        <header>
+        <h2 class="sub-heading name">Creative tracker Lorem ipsum dolor sit amet</h2>
+          <span class="focus focus-independence">
+            Independence
+          </span>
+          <span class="difficulty">Hard</span>
+        </header>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+    
+        <a data-lightbox="achievement_58" href="/uploads/achievement/asset/58/image.jpg" >
+        <img alt="Thumb image" class="img-thumbnail" src="/uploads/achievement/asset/58/thumb_image.jpg" />
+        </a>
+      </li>
+
+  </ul>
+<hr />
+</section>
+
+
+<section class="component">
+  <h3 class="component-heading">Form fields</h3>
+
+  <p>
+    <input type="text" placeholder="I'm a leaf on the wind" />
+    <input type="text" value="Oh god oh god we're all gonna die" />
+  </p>
+
+  <p>
+    <input type="email" placeholder="wash@serenity.ship" />
+  </p>
+
+  <p>
+    <button class="secondary-button image-upload-fake" >Upload profile picture</button>
+      <!-- FAKE Image Upload (workaround) Addapted from: http://www.quirksmode.org/dom/inputfile.html -->
+      <!-- Fake upload button allows us more css control -->
+      <button class="secondary-button image-upload-fake" >Upload profile picture</button>
+      <!-- The real image upload button -->
+      <input type="file" class="image-upload-real" id="learner_avatar"/>
+  </p>
+
+  <p>
+    <input type="date" />
+  </p>
+
+  <p>
+    <input type="number" value="13" />
+  </p>
+
+  <p>
+    <select>
+      <option>Something</option>
+      <option>Maybe this</option>
+      <option>Or this</option>
+    </select>
+  </p>
+
+  <p>
+    <textarea></textarea>
+  </p>
+
+  <p>
+    <label>
+      Field with label
+      <input type="text" value="" />
+    </label>
+  </p>
+
+</section>
+
+<section style="max-width: 500px;" class="component">
+  <h3 class="component-heading">Focus Selector</h3>
+
+  <select class="dropdown" id="tracker_focus_id">
+    <option>Communication</option>
+    <option>Compassion</option>
+    <option>Community</option>
+    <option>Cooperation</option>  
+  </select>
+
+</section>
+
+<section class="component">
+  <h2 class="component-heading">Focus Labels / Colors</h2>
+
+  <div class="focus focus-general">General
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-communication">Communication
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-collaboration">Collaboration
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-confidence">Confidence
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-empathy">Empathy
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-independence">Independence
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-persistence">Persistence
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-problem-solving">Problem solving
+    <span class="arrow-left"></span>
+  </div>
+  <br />
+  <div class="focus focus-responsibility">Responsibility
+    <span class="arrow-left"></span>
+  </div>
+
+<br />
+<pre>
+/* Available SASS Variables for Focus Styling */
+$focus-communication:   #CC6600;
+$focus-collaboration:   #6AA877;
+$focus-confidence:      #567CBA;
+$focus-creativity:      #BF5368;
+$focus-empathy:         #9C874D;
+$focus-independence:    #009094;
+$focus-persistence:     #7B6997;
+$focus-problem-solving: #B81231;
+$focus-responsibility:  #D2AA1D;
+</pre>
+
+</section>
+
+<section class="component">
+  <h3 class="component-heading">.button, .secondary-button</h3>
+
+  <p>
+    <input type="submit" class="button" value="Input button"/>
+    <a href="#" class="secondary-button">Secondary link button</a>
+  </p>
+  <p>
+    <a href="#" class="button">Link button</a>
+    <button class="secondary-button">Secondary button tag</button>
+  </p>
+  <p>
+    <button class="button">Button tag</button>
+    <input type="submit" class="secondary-button" value="Secondary input button">
+  </p>
+  <p>
+    <button class="button edit">Edit button with icon</button>
+  </p>
+
+  <h4>.secondary-button.slim-button</h4>
+  <p><button class="secondary-button slim-button">Slim button</button></p>
+
+  <h4>.secondary-button.slim-button.remove</h4>
+
+  <p><button class="secondary-button slim-button remove">End Tracker</button></p>
+  <h4>.secondary-button.slim-button.edit</h4>
+  <p><button class="secondary-button slim-button edit">Edit</button></p>
+
+  <h4>.button.icon-button.done</h4>
+  <p><button class="button icon-button done">Done</button></p>
+
+  <h4>.secondary-button.icon-button.edit</h4>
+  <p><button class="secondary-button icon-button edit">Edit</button></p>
+</section>
+
+<section style="max-width: 400px" class="component">
+  <h3 class="component-heading">.activity-list</h3>
+
+  <ol class="activity-list">
+    <li>
+      <h2 class="sub-heading">Do an activity</h2>
+      <p>Do this a hundred times to be crowned high lord emperor of the multiverse.</p>
+    </li>
+  </ol>
+
+</section>
+
+<section style="max-width: 500px;" class="component">
+  <h3 class="component-heading">.pane-header</h3>
+
+  <div class="pane-header">
+    <h2>Pane header <span class="count">2</span></h2>
+    <a href="#" class="add">Add one</a>
+  </div>
+
+  <h4>.pane-header.active</h4>
+  <div class="pane-header active">
+    <h2>Pane header <span class="count">34500</span></h2>
+    <a href="#" class="add">Add one</a>
+  </div>
+
+  <h4>.pane-header.trackers-pane-header</h4>
+  <div class="pane-header trackers-pane-header">
+    <h2>Trackers <span class="count">120</span></h2>
+    <a href="#" class="add">Add one</a>
+  </div>
+
+  <h4>.pane-header.achievements-pane-header.active</h4>
+  <div class="pane-header trackers-pane-header active">
+    <h2>Trackers <span class="count">11</span></h2>
+    <a href="#" class="add">Add one</a>
+  </div>
+
+  <h4>.pane-header.achievements-pane-header</h4>
+  <div class="pane-header achievements-pane-header">
+    <h2>Achievements <span class="count">0</span></h2>
+    <a href="#" class="add">Add one</a>
+  </div>
+
+  <h4>.pane-header.achievements-pane-header.active</h4>
+  <div class="pane-header achievements-pane-header active">
+    <h2>Achievements <span class="count">4556457</span></h2>
+    <a href="#" class="add">Add one</a>
+  </div>
+</section>

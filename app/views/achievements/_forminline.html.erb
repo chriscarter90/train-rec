@@ -1,0 +1,32 @@
+<%= f.label :description %>
+<%= f.text_area :description, 
+    :placeholder => "Log something you've done today",
+    :required => false %>
+
+<!-- need to split out the form controls so we can re-use them in the inline Achievement Editing -->
+
+<footer class="activity-form-controls">
+  <label class="secondary-button image-upload-fake" id="achievement-image-button">
+    Add a picture
+    <%= f.file_field :asset %>
+  </label>
+
+  <%= f.label :focus_id, 'Add focus' %>
+  <%= f.select :focus_id,
+    options_for_select(Focus.select_options, f.object.focus_id),
+    {},
+    { class: 'dropdown focus-select' } %>
+
+  <%= f.label :subject_id, 'Add subject' %>
+  <%= f.select :subject_id,
+    options_for_select(Subject.select_options, f.object.subject_id),
+    {},
+    { class: 'dropdown subject-select' } %>
+
+
+  <%= f.submit 'Add', class: 'button achievement-button', 
+    id: 'achievement_save' %>
+
+  <%= link_to "Cancel", dashboard_path, class: 'button secondary-button cancel', 
+      id: 'achievement_cancel' %>
+</footer>   

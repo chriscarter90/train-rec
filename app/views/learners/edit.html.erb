@@ -1,0 +1,53 @@
+<%= form_for resource, url: profile_path, builder: FormBuilder, html: { class: "l-profile" } do |f| %>
+  <% content_for :sidebar do %>
+    <%= render 'short_profile', user: current_user, f: f %>
+  <% end %>
+
+  <div class="full-profile">
+    <h1 class="heading">Edit profile</h1>
+
+    <label class="secondary-button image-upload-fake">
+      Upload profile picture
+      <%= f.file_field :avatar, class: "image-upload-real" %>
+    </label>
+
+    <%= f.label :name, class: 'field' do %>
+      <% f.text_field :name %>
+    <%- end -%>
+
+    <%= f.label :age, class: 'field' do %>
+      <% f.number_field :age, min: 0 %>
+    <%- end -%>
+
+    <%= f.label :class_year, "Class", class: 'field' do %>
+      <% f.text_field :class_year %>
+    <%- end -%>
+
+    <%= f.label :about_me, class: 'field long-field' do %>
+      <% f.text_area :about_me %>
+    <%- end -%>
+
+    <%= f.label :about_me_as_a_learner, class: 'field long-field' do %>
+      <% f.text_area :about_me_as_a_learner %>
+    <%- end -%>
+
+    <%= f.label :hobbies_and_interests, 'My hobbies and interests', class: 'field long-field' do %>
+      <% f.text_area :hobbies_and_interests %>
+    <%- end -%>
+
+    <%= f.label :big_ambitions, 'My big ambitions', class: 'field long-field' do %>
+      <% f.text_area :big_ambitions %>
+    <%- end -%>
+
+    <%= f.label :favourite_things, '3 favourite things', class: 'field long-field' do %>
+      <% f.text_area :favourite_things %>
+    <%- end -%>
+
+    <%= f.label :best_thing_this_week, class: 'field long-field' do %>
+      <% f.text_area :best_thing_this_week %>
+    <%- end -%>
+
+    <%= f.submit "Save", class: "button" %>
+    <%= link_to "Cancel", profile_path, class: "secondary-button" %>
+  </div>
+<% end %>

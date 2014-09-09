@@ -1,0 +1,56 @@
+.tracker-list {
+  $start: #ff0000;
+  $end: #b4cf49;
+  $count: 5;
+  $h: hue($start);
+  $s: saturation($start);
+  $l: lightness($start);
+  $hd: ($h - hue($end)) / $count;
+  $sd: ($s - saturation($end)) / $count;
+  $ld: ($l - lightness($end)) / $count;
+
+  li {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+
+      background-color: $end;
+
+      content: '';
+    }
+
+    @for $i from 0 to $count {
+      &:nth-child(#{$i + 1}):before {
+        background-color: hsl($h - ($hd * $i), $s - ($sd * $i), $l - ($ld * $i));
+      }
+    }
+  }
+
+  .actions {
+    position: relative;
+    height: 4rem;
+  }
+
+  .remove {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .done {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .edit {
+    position: absolute;
+    right: 4.5rem;
+    bottom: 0;
+  }
+}

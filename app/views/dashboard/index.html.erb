@@ -1,0 +1,17 @@
+<section class="achievements">
+  <header class="pane-header achievements-pane-header">
+    <%= form_tag dashboard_path, :method => :get do %>
+      <%= label_tag :focus_id, 'Filter' %>
+      <%= select_tag :focus_id, options_for_select(filter_options, default_filter_option) %>
+    <% end %>
+  </header>
+  <div class="achievement-inline-form">
+    <%= form_for Achievement.new do |f| %>
+      <%= render 'achievements/forminline', :f => f %>
+    <% end %>
+  </div>
+
+  <ul>
+    <%= render @achievements %>
+  </ul>
+</section>

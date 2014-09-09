@@ -1,0 +1,15 @@
+app: &APP
+  adapter: mysql2
+  username: app
+  password: app
+  pool: 5
+  timeout: 5000
+test:
+  database: test
+  <<: *APP
+development:
+  database: app
+  <<: *APP
+production:
+  database: app
+  <<: *APP

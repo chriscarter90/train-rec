@@ -1,0 +1,232 @@
+// Place all the styles related to the achievements controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.l-standalone-page .achievements-pane-header {
+  margin-bottom: 0rem;
+}
+
+.achievement-inline-form label, .new_achievement label {
+  display: none;
+}
+
+#achievement_name, #achievement_focus_id, #achievement_description {
+  margin-left: 15px; 
+  margin-bottom:0.5em;
+
+}
+
+#achievement_name, #achievement_description {
+    width: 96%;
+    border: none;
+    border-radius: 0;
+    padding-left: 0.5em;
+    border: 1px solid $light-grey;
+    background-color: white;
+}
+
+.achievement-inline-form {
+  #achievement_name {
+      font-size: 1.7em;
+      margin-top:0.5em;
+      display: none;
+  }  
+}
+
+#achievement_description {
+    font-size: 1.7em;
+    min-height: 0.1em;
+    margin-top: 0.5em;
+}
+#achievement_description::-webkit-input-placeholder {
+    color:    #999;
+}
+
+
+/** 
+ * Clear Placeholder text! see: http://stackoverflow.com/questions/12821746
+ * http://bourbon.io/docs/#placeholder 
+ */
+input:focus {
+  @include placeholder {
+    color: transparent!important;
+  }
+}
+textarea:focus {
+  @include placeholder {
+    color: transparent!important;
+  }
+}
+
+input {
+  @include placeholder {
+    color: #CFCFCF;
+  }
+}
+textarea {
+  @include placeholder {
+    color: #CFCFCF;
+  }
+}
+
+input:invalid {
+    box-shadow:none;
+}
+
+
+.activity-form-controls {
+    width: 100%;
+    display:block;
+    background-color: #F6F6F6;
+}
+
+#achievement_save, #achievement_cancel {
+    height: 2em;
+    width: 100px;
+    float: right;
+    margin: 0.5em;
+   /* margin-right: 1em; */
+    font-size: 1.3em;
+}
+
+.img-thumbnail {
+  /* max-width: 40px; */
+  /* max-height: 200px; */
+  border: 1px solid #CFCFCF;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.new_achievement {
+  #achievement_focus_id, .activity-form-controls {
+    display:none;
+  }
+  input {
+  border: none;
+  }
+}
+
+.achievements {
+  header {
+    @include pie-clearfix;
+
+    h1 {
+      float: left;
+    }
+
+    label {
+      display: none;
+    }
+
+    form {
+      float: right;
+    }
+  }
+  p {
+    font-size: 1.5em;
+  }
+}
+.activity {
+  list-style: none;
+  padding-right:2em;
+  border-bottom: 1px solid $grey;
+  padding-bottom: 1em;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  
+  header {
+    @include pie-clearfix;
+  }
+  .name {
+    width: 72%;
+    float: left;
+
+    span {
+      font-size: 1.5rem;
+      color: $light-grey;
+      padding-left: 1em;
+    }
+  }
+  .focus {
+    margin-right: 30px;
+  }
+
+  .focus, .difficulty, .subject {
+    float: right;
+    margin-right: 10px;
+    display: block;
+  }
+
+  .difficulty {
+    width: 4em;
+    text-align:right;
+    line-height: 3rem;
+  }
+}
+
+/* Inline Achievement Editing */
+
+.activity {
+  display: block;
+  min-height: 140px;
+  position: relative;
+
+  .name {
+    width: 65%;
+    font-size: 1.7em;
+    font-weight: bold;
+    min-height: 3rem;
+    clear:both;
+  }
+
+  .description {
+    margin-top:0px;
+    clear: both;
+    min-height: 2em;
+    width: 65% !important;
+    font-size: 1.5em;
+    display: inline-block;
+    padding-bottom: 1em;
+  }
+
+  /* initially hide inputs */
+  .input {
+    display: none;
+  }
+
+  .date {
+      font-size: 1.5rem;
+      color: $light-grey;
+      padding-right: 1em;
+      font-weight: bold;
+      float: right;
+  }
+  .focus {
+    float: right;
+  }
+  .focus-date {
+    float: right;
+    width: 29%;
+    display: inline;
+  }
+  footer {
+    width: 40%;
+    min-height: 3em;
+    float: right;
+    display: block;
+    position: releative;
+    margin-top: -1em;
+    position: absolute; right: 1em; bottom: 1em;
+    .update, .remove {
+      display: none;
+    }
+  }
+
+  .button, .edit {
+    float: right;
+  }
+  .img-thumbnail {
+    clear: both;
+  }
+}

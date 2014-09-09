@@ -1,0 +1,24 @@
+.profile {
+  padding: 1.5rem;
+
+  background-color: $profile-background-colour;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  color: #fff;
+
+  .avatar {
+    margin-bottom: 1rem;
+  }
+
+  dt {
+    float: left;
+    clear: left;
+    margin-right: 1ex;
+
+    font-weight: bold;
+
+    &:after {
+      content: ':';
+    }
+  }
+}

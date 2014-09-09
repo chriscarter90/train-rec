@@ -1,0 +1,38 @@
+#nav {
+  display: inline-block;
+  list-style: none;
+  width: 100%;
+  clear: both;
+  position: fixed;
+  top:0;
+  font-size: 1.5em;
+  text-align: center;
+  min-height: $global-nav-height;
+  background: #333;
+  z-index: 10;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+#nav li a { 
+  height: $global-nav-height;
+  width: 17%; 
+  float: left;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  padding-top: $global-nav-height/2 - 10;
+}
+
+#nav li a#logout { width: 21%; }
+
+#nav li a#nav-dashboard {
+    width: 37%; 
+}
+
+#nav li a:hover, #nav li a.nav-active {
+  background: $global-nav-active-color;
+}
+.my-profile {
+  min-width: $sidebar-width;
+}

@@ -1,0 +1,30 @@
+@import "normalize";
+@import "foundation";
+// @import ""
+
+h1 {
+  margin-left: 2%;
+}
+
+#datatable {
+  max-width: 90%;
+}
+
+#datatable, #datatable_filter, #datatable_info {
+  margin-left: 2%;
+}
+
+#datatable_filter {
+  width: 200px;
+}
+
+#datatable_info {
+  margin-bottom: 20px;
+}
+
+
+#datatable_length, #datatable_previous, #datatable_next {
+  display: none;
+}
+
+.less, .overflow { display: none; }

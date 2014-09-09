@@ -1,0 +1,22 @@
+<!-- views/navigation/_global_navigation.html.erb -->
+<header>
+  <nav>
+    <ul id="nav">
+      <% if current_user %>
+        <li><%= link_to 'My Profile', profile_path, class: "my-profile" %></li>
+        <li>
+          <a id="nav-dashboard" href="/dashboard">
+            My Activities and Achievements
+          </a>
+        </li>
+        <li><%= link_to 'My Reports', profile_reports_path %></li>
+        <li>
+          <%= link_to logout_path, id: 'logout' do %>
+            <%= image_tag 'logout-Icon.png', class: 'logout-icon' %>
+            <span class='logout-link'>Logout</span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

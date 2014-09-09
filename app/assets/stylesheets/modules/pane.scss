@@ -1,0 +1,10 @@
+.pane {
+  border-left: 1px solid #777;
+  border-right: 1px solid #777;
+  margin-left: -1px;
+
+  &:first-of-type {
+    border-left: 0;
+    margin-left: 0;
+  }
+}

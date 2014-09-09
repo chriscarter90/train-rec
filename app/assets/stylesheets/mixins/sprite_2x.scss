@@ -1,0 +1,17 @@
+@import "../functions/sprite_position_2x";
+
+@mixin sprite-2x ($map, $sprite, $offset-x: 0, $offset-y: 0, $hover: false) {
+  $image: sprite-file($map, $sprite);
+  $width: round(image-width($image) / 2);
+
+  background-image: sprite-url($map);
+  background-position: sprite-position-2x($map, $sprite, $offset-x, $offset-y);
+  background-size: $width auto;
+  background-repeat: no-repeat;
+
+  @if $hover {
+    &:hover {
+      background-position: sprite-position-2x($map, "#{$sprite}_hover", $offset-x, $offset-y);
+    }
+  }
+}

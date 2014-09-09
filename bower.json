@@ -1,0 +1,11 @@
+{
+  "name": "progress360",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "lodash": "~2.3.0",
+    "backbone.marionette": "~1.0.0",
+    "handlebars": "~1.1.2",
+    "fastclick": "~0.6.10",
+    "jasmine-jquery": "~1.5.93"
+  }
+}

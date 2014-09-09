@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+class Tag
+  def initialize(tag_string)
+    @tag_string = tag_string
+    @tag_numbers = @tag_string.split('.').map(&:to_i)
+  end
+
+  def major
+    @tag_numbers[0]
+  end
+
+  def minor
+    @tag_numbers[1]
+  end
+
+  def patch
+    @tag_numbers[2]
+  end
+
+  def numbers
+    @tag_numbers
+  end
+  
+  def <=>(other)
+    @tag_numbers <=> other.numbers
+  end
+
+  def to_s
+    @tag_string
+  end
+
+  def increase_patch
+    Tag.new("%d.%d.%d" % [major, minor, patch + 1])
+  end
+end
+
+def tags
+  `git tag`.split("\n").map { |t| Tag.new(t) }
+end
+
+def latest_tag
+  tags.sort.last
+end
+
+def parse_git_branch
+  `git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'`.split(' ').last
+end
+
+unless parse_git_branch == 'master'
+  raise "Can only autotag master branch. Current branch: #{parse_git_branch}. Current latest tag: #{latest_tag}."
+end
+
+new_tag = latest_tag.increase_patch
+puts "Tagging HEAD as #{new_tag}"
+`git tag #{new_tag}`

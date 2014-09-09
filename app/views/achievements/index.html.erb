@@ -1,0 +1,11 @@
+<% content_for :page_title, "Achievements" %>
+
+<header class="pane-header achievements-pane-header">
+  <h1>Achievements</h1>
+  <%= link_to "Create new achievement", new_achievement_path, class: 'add' %>
+</header>
+
+<ol class="activity-list">
+  <%= render @achievements %>
+</ol>
+

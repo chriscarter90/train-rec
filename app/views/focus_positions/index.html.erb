@@ -1,0 +1,13 @@
+<div class="focus_positions_wrapper">
+<%= form_for current_user, url: profile_path do |user_form| %>
+<h2 class="pane-header focus-header">Where do you think you are now? </h2>
+  <%= user_form.fields_for :focus_positions do |positions_form| %>
+    <%= render partial: 'focus_positions/form', locals: { focus_position: positions_form.object.decorate, form: positions_form } %>
+  <% end %>
+  <footer class="activity-form-controls">
+  <%= user_form.submit 'Save', class: 'button', id: 'focus_positions_save' %>
+  <%= link_to "Cancel", profile_path, class: 'button secondary-button cancel', 
+      id: 'focus_positions_cancel' %>
+  </footer>
+<% end %>
+</div>

@@ -1,0 +1,17 @@
+defaults : &defaults
+  aws_access_key_id: AKIAJKFBR6BHTZPBM2LA
+  aws_secret_access_key: AUQoTP1hEAwnB3wLlMNvvTfcGKIMhwS0jXithbq5
+  aws_bucket_name: progress360
+  region: eu-west-1
+development:
+  <<: *defaults
+  fog_directory: example-development
+test:
+  <<: *defaults
+  fog_directory: example-test
+production:
+  <<: *defaults
+  fog_directory: production
+staging:
+  <<: *defaults
+  fog_directory: staging

@@ -1,0 +1,33 @@
+<% content_for :page_title, "New Achievement" %>
+
+<% tracker = @tracker.decorate %>
+<div id="tracker-done" class="tracker">
+  <div id="tracker-details">
+
+    <span class="focus focus-<%= tracker.focus_css_class %>">
+      <%= tracker.focus_name %>
+    </span>
+    <%= tracker.subject_element %>
+    <span class="difficulty">
+      <%= tracker.difficulty %>
+    </span>
+
+    <h2 class="sub-heading"><%= tracker.name %></h2>
+
+    <%= form_for tracker, method: :delete, html: { id: nil } do %>
+      <%= button_tag "Archive Tracker", class: "secondary-button archive" %>
+    <% end %>
+
+    <p><%= tracker.description %></p>
+  </div>
+
+  <h2 class="sub-heading helptext">Describe what you did:</h2>
+  <%= form_for resource, url: resource_url do |f| %>
+    <%= render 'form', :f => f %>
+  <% end %>
+
+  <ol class="activity-list">
+    <%= render @achievements.compact %>
+  </ol>
+
+</div>

@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+
+# This script does lot of horrible things that may only happen to work
+# in the specific case. USE WITH CARE.
+
+require 'fileutils'
+
+def file_contains_original?(filename, original)
+  `grep -i #{original} #{filename}`.size > 0
+end
+
+def replace_in_file!(filename, original, replacement)
+  new_content = `sed -e 's/#{original}/#{replacement}/' -e 's/#{original.downcase}/#{replacement.downcase}/' #{filename}`
+  if filename.include?(original.downcase)
+    new_filename = filename.gsub(original.downcase, replacement.downcase)
+    puts "#{filename} -> #{new_filename}"
+    File.delete(filename)
+    File.open(new_filename, 'w') { |f| f.write new_content }
+  else
+    puts filename
+    File.open(filename, 'w') { |f| f.write new_content }
+  end
+    
+end
+
+def replace_word_in_file(filename, original, replacement)
+  if file_contains_original?(filename, original)
+    replace_in_file!(filename, original, replacement)
+  end
+end
+
+def rename_directories(original, replacement)
+  original = original.downcase
+  replacement = replacement.downcase
+  directories = `find . -type d -iname "*challenge*"`.split
+  directories.each do |dirname|
+    newdirname = dirname.gsub(original, replacement)
+    puts "#{dirname}  -> #{newdirname}"
+    FileUtils.mv(dirname, newdirname)
+  end
+end
+
+from = "Challenge"
+to = "Tracker"
+
+rename_directories(from, to)
+files = `find app lib spec config public -type f`.split
+
+files.each do |filename|
+  replace_word_in_file(filename, from, to)
+end

@@ -1,0 +1,29 @@
+$serif: serif;
+$sans-serif: arial, sans-serif;
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+.heading {
+  font-size: relative-font-size(2.5rem);
+  line-height: 3rem;
+  margin-bottom: 2rem;
+}
+
+.sub-heading {
+  margin-bottom: 1rem;
+
+  font-size: relative-font-size(1.8rem);
+  line-height: 3rem;
+  font-weight: bold;
+}

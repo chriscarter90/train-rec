@@ -1,0 +1,7 @@
+@function sprite-position-2x($map, $sprite, $offset-x: 0, $offset-y: 0) {
+  $pos: sprite-position($map, $sprite, $offset-x, $offset-y);
+  $x: round(nth($pos, 1) / 2);
+  $y: round(nth($pos, 2) / 2);
+
+  @return $x $y;
+}

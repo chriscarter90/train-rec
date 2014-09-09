@@ -1,0 +1,29 @@
+<section class="profile full-height">
+  <h1 class="visually-hidden">Profile</h1>
+
+  <div class="avatar">
+    <div class="avatar-cropper">
+      <div class="avatar-constrainer">
+        <% if user.avatar? %>
+          <%= image_tag(user.avatar_url) %>
+        <% else %>
+          <%= image_tag "default_avatar.png", alt: "Avatar of %s" % user %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <dl>
+    <dt class="visually-hidden">Name</dt>
+    <dd class="heading fn"><%= user.name %></dd>
+    <% if user.age.present? %>
+      <dt>Age</dt>
+      <dd><%= user.age %></dd>
+    <% end %>
+    <% if user.class_year.present? %>
+      <dt>Class</dt>
+      <dd><%= user.class_year %></dd>
+    <% end %>
+
+  </dl>
+</section>

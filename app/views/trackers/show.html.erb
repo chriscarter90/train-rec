@@ -1,0 +1,25 @@
+<% tracker = @tracker.decorate %>
+<article class="tracker activity">
+  <header>
+    <h2 class="sub-heading name"><%= tracker.name %></h2>
+    <span class="focus focus-<%= tracker.focus_css_class %>">
+      <%= tracker.focus_name %>
+    </span>
+    <span class="difficulty"><%= tracker.difficulty %></span>
+  </header>
+
+  <p><%= tracker.description %></p>
+
+  <footer>
+    <ul>
+      <li>
+        <%= form_for tracker, method: :delete, html: { id: nil } do %>
+          <%= button_tag "End Tracker", class: "secondary-button slim-button remove" %>
+        <% end %>
+      </li>
+      <li><%= link_to "Cancel", root_path, class: "button secondary-button" %></li>
+      <li><%= link_to "Done", new_tracker_achievement_path(tracker), class: "button done" %></li>
+    </ul>
+  
+  </footer>
+</article>

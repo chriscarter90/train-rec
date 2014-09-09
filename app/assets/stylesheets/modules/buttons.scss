@@ -1,0 +1,218 @@
+.button, .secondary-button {
+  @include appearance(none);
+
+  display: inline-block;
+  padding: 0.4rem 1rem;
+
+  font: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: inherit;
+
+  color: inherit;
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+
+  -webkit-tap-highlight-color: $active-colour;
+
+  &:active {
+    @include transition(0.2s background-color);
+
+    background-color: $active-colour!important;
+  }
+
+  &:before {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    margin-left: -0.4rem;
+
+    vertical-align: top;
+  }
+
+  &.remove:before {
+    @include sprite-2x($icon-sprite, 'x_grey');
+    content: '';
+  }
+
+  &.edit:before {
+    @include sprite-2x($icon-sprite, 'pencil_light_grey');
+    content: '';
+  }
+
+  &.done {
+    color: white;
+    background-color: $done-button-colour;
+  }
+
+  &.alert {
+    color: white;
+    background-color: rgb(240, 65, 36);
+    border-color: rgb(207, 40, 14);
+  }
+
+  &.done:before {
+    @include sprite-2x($icon-sprite, 'tick_grey');
+    content: '';
+    margin-right:1em;
+  }
+}
+
+.button {
+  background-color: $button-colour;
+  color: $button-text-colour;
+
+  border-color: $button-colour;
+}
+
+.secondary-button {
+  background-color: $secondary-button-colour;
+  color: $secondary-button-text-colour;
+  border-color: $border-colour;
+}
+
+.button.tracker-button {
+  background-color: $tracker-button-colour;
+  border-color: $tracker-button-colour;
+  color: $tracker-button-text-colour;
+}
+
+.button.achievement-button {
+  background-color: $achievement-button-colour;
+  border-color: $achievement-button-colour;
+  color: $achievement-button-text-colour;
+}
+
+// Variants
+.slim-button {
+  padding: 0 0.5rem;
+  font-size: relative-font-size(1rem);
+}
+
+.icon-button {
+  position: relative;
+  padding: 1rem 0 0;
+  width: 4rem;
+  height: 4rem;
+
+  font-size: relative-font-size(0.9rem);
+  line-height: 4rem;
+  text-align: center;
+
+  color: inherit;
+
+  &:before {
+    position: absolute;
+    top: 4px;
+    left: 1rem;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0 auto 2px;
+
+    content: '';
+  }
+
+  // Styles
+  &.edit:before {
+    @include sprite-2x($icon-sprite, 'pencil_grey');
+  }
+}
+
+/* This is a workaround to style the image upload button
+ * We googled it extensively and the best "solution" we found
+ * was: http://www.quirksmode.org/dom/inputfile.html
+ * not ideal but it works
+ */
+
+.image-upload-real {
+  display:none;
+}
+.image-upload-fake {
+  width: 180px;
+  height: 30px;
+  padding-top: 5px;
+  background-color: $button-colour;
+  opacity:1;
+  background: image-url("Upload-Image-icon.png") #F6F6F6 5px 7px no-repeat ;
+  margin-bottom: 20px;
+}
+
+#achievement-image-button {
+  width: 150px;
+  background: image-url("paperclip.svg") white 5px 3px no-repeat;
+  background-size: 24px 24px;
+  height: 32px;
+  margin-top: 8px;
+  padding-left: 30px;
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+
+$dropdown-size: 30px;
+
+.dropdown {
+  font-size: 1em;
+  color: $select-border-colour;
+  margin-top: 8px;
+  padding-top: 0.2em;
+  padding-right: 20px;
+  padding-left: $dropdown-size * 1.5;
+  min-width: 190px;
+  height: $dropdown-size;
+  overflow: hidden;
+  background: image-url('select-icon.png') no-repeat left white;
+  background-size: $dropdown-size $dropdown-size;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  color: $text-colour;
+  font-size: 1.3em;
+  &:active {
+    background: image-url('select-icon-active.png') no-repeat left white;
+    background-size: $dropdown-size $dropdown-size;
+  }
+}
+
+
+
+#tracker_save, #tracker_cancel, #focus_positions_cancel, #focus_positions_save {
+    height: 2em;
+    width: 100px;
+    float: right;
+    margin: 0.5em;
+    font-size: 1.3em;
+}
+
+#tracker_cancel, #achievement_cancel, #focus_positions_cancel{
+  padding-top: 0.4em;
+  padding-left: 1.5em;
+}
+
+#tracker_save {
+  width: 120px;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+label.image-upload-fake {
+  width: 200px;
+  padding-left: 3em;
+}
+
+#achievement-image-button {
+  display: inline-block;
+}

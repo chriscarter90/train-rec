@@ -1,0 +1,31 @@
+<div>
+  <div>
+    <h1>Achievements</h1>
+    <table id="datatable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>User</th>
+          <th>Focus</th>
+          <th>Created at</th>
+          <th>Image?</th>
+          <th>Tracker ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @achievements.each do |achievement| %>
+          <tr>
+            <td><%= achievement.name %></td>
+            <td><%= achievement.description %></td>
+            <td><%= achievement.learner.name %></td>
+            <td><%= achievement.focus_name %></td>
+            <td><%= achievement.created_at %></td>
+            <td><%= achievement.asset? %></td>
+            <td><%= achievement.tracker_id %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+</div>

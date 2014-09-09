@@ -1,0 +1,25 @@
+.full-profile {
+  background-color: $profile-background-colour;
+  color: $profile-text-colour;
+  height: 100%;
+  min-height: 100%;
+  overflow-y: hidden;
+  padding: 2em;
+  p {
+    max-width: 40em;
+  }
+}
+
+.about-me {
+  display: inline-block;
+  margin-right: 1ex;
+}
+
+.button, .secondary-button {
+  margin-right: 1ex;
+  vertical-align: top;
+}
+
+.full-height {
+  height: 100%;
+}

@@ -1,0 +1,14 @@
+.field {
+  display: block;
+
+  span {
+    display: inline-block;
+  }
+
+  &.long-field {
+    span {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+}
