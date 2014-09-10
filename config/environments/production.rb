@@ -62,6 +62,7 @@ Progress360::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   config.assets.precompile += %w( admin.css admin.js responsive.css bootstrap.min.css flat-ui-pro.css unicons.css responsive.css flat-ui-pro.js fileinput.js bootstrap.js )
+  config.assets.precompile += [ /\.(?:svg|eot|woff|ttf)\z/ ]
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'unicons';
-	src:url('fonts/unicons.eot');
-	src:url('fonts/unicons.eot?#iefix') format('embedded-opentype'),
-		url('fonts/unicons.svg#unicons') format('svg'),
-		url('fonts/unicons.woff') format('woff'),
-		url('fonts/unicons.ttf') format('truetype');
+	src:font-url('unicons.eot');
+	src:font-url('unicons.eot?#iefix') format('embedded-opentype'),
+		font-url('unicons.svg#unicons') format('svg'),
+		font-url('unicons.woff') format('woff'),
+		font-url('unicons.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
