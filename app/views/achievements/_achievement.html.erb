@@ -11,13 +11,14 @@
 
     <div class="clearfix">
       <div class="pull-right">
-        <%= link_to '#', class: 'btn btn-primary' do %>
-          <span class="icon-pen"></span>
+        <%= link_to '#', class: 'btn-action' do %>
+          <span class="fui-new"></span>
         <% end %>
-        <%= link_to achievement_path(achievement), :method => :delete, remote: true, class: 'btn btn-primary' do %>
-          <span class="icon-trash"></span>
+        <%= link_to achievement_path(achievement), :method => :delete, remote: true, class: 'btn-action' do %>
+          <span class="fui-cross-circle"></span>
         <% end %>
       </div>
     </div>
   <% end %>
 </li>
+
