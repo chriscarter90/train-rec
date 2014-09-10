@@ -27,7 +27,6 @@ coverage
 rdoc
 pkg
 
-config/database.yml
 config.ru
 *.cache
 *.log
