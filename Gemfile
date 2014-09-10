@@ -79,3 +79,5 @@ group :test, :development do
   # gem "bond"
   # gem "jist"
 end
+
+gem 'rails_12factor', group: :production
