@@ -29,11 +29,11 @@ gem 'handlebars_assets', '~> 0.14.1'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'mini_magick'
-gem 'mysql2'
 gem 'neat', '~> 1.4.0'
+gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier'
-gem 'unf' 
+gem 'unf'
 gem 'unicorn', '~> 4.6.0'
 
 group :development do
