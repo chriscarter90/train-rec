@@ -19,7 +19,7 @@
       <div class="panel-body clearfix">
         <%= tracker.description %>
         <%= link_to  tracker_path(tracker), method: :delete, data: { confirm: "Are you sure you want to archive this tracker?" } do %>
-          <span class="fui-trash pull-right"></span>
+          <span class="btn-action fui-trash pull-right"></span>
         <% end %>
       </div>
     </div>

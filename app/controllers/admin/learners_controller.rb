@@ -20,7 +20,7 @@ class Admin::LearnersController < AdminController
       .select("COUNT(DISTINCT active_trackers.id) AS active_count")
       .select("COUNT(DISTINCT inactive_trackers.id) AS inactive_count")
       .select("COUNT(DISTINCT achievements.id) AS achievements_count")
-      .group('learners.id')
+      .group('learners.id, achievements_last.created_at, achievements_last.description')
 
     respond_with @learners
   end
