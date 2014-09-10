@@ -7,7 +7,7 @@ class AchievementsController < InheritedResources::Base
 
   def create
     create! do |success, failure|
-      success.html { redirect_to dashboard_path }
+      success.html { redirect_to new_tracker_achievement_path(parent) }
       failure.html { redirect_to dashboard_path }
     end
   end
