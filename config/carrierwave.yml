@@ -1,0 +1,17 @@
+defaults : &defaults
+  aws_access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  aws_bucket_name: progress360
+  region: eu-west-1
+development:
+  <<: *defaults
+  fog_directory: example-development
+test:
+  <<: *defaults
+  fog_directory: example-test
+production:
+  <<: *defaults
+  fog_directory: production
+staging:
+  <<: *defaults
+  fog_directory: staging

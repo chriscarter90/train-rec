@@ -9,6 +9,7 @@ tmtags
 *~
 \#*
 .\#*
+.env
 
 ## VIM
 *.swp
@@ -27,7 +28,6 @@ rdoc
 pkg
 
 config/database.yml
-config/carrierwave.yml
 config.ru
 *.cache
 *.log
