@@ -63,6 +63,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'dotenv'
   gem 'jasmine-rails', '~> 0.4.9'
   gem 'rspec-rails'
 
