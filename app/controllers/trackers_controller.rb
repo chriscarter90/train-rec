@@ -2,7 +2,8 @@ class TrackersController < InheritedResources::Base
   respond_to :html, :json
   actions :new, :create, :show, :index, :destroy
   before_filter :set_trackers, :except => [:index]
-
+  layout 'responsive'
+  
   def create
     create! { dashboard_path }
   end

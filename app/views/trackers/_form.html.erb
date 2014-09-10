@@ -1,41 +1,31 @@
-<div class='new-tracker-form'>
-  <%= render "shared/error_messages", :target => resource %>  
+<div class="form-group">
 
   <%= f.label :name, class: 'mandatory' %>
   <%= f.text_field :name, 
       :placeholder => 'What is the title of your tracker?',
-      :required => true %> 
-
+      :required => true,
+      :class => 'form-control' %> 
   <%= f.label :description %>
-  <%= f.text_area :description, 
-      :placeholder => 'Describe your tracker' %>
-
-  <%= f.label :difficulty, 'How difficult is it?' %>
-  <%= f.select :difficulty, Tracker::DIFFICULTIES.collect { |d| [d.first.to_s.humanize, d.first] }, {}, class: 'dropdown' %>
-
-  <div id='focus_select'>
-    <%= f.label :focus_id, "Add Focus" %>
-    <%= f.select :focus_id,
+  <%= f.text_area :description, :placeholder => 'Describe the kind of thing you might log against this tracker', class: "form-control", rows: 5 %>
+  <%= f.label :focus_id, "Focus" %>
+  <%= f.select :focus_id,
                  options_for_select(Focus.select_options),
                  {},
-                 {class: 'dropdown'}
+                 {class: 'form-control select select-primary'}
     %>
-  </div>
-
-  <div id='subject_select'>
-    <%= f.label :subject_id, "Add Subject" %>
-    <%= f.select :subject_id,
-                 options_for_select(Subject.select_options),
-                 {},
-                 {class: 'dropdown'}
-    %>
-  </div>
 </div>
-<footer class="activity-form-controls">
-  <%= f.submit 'Set Tracker', class: 'button tracker-button', 
-      id: 'tracker_save' %>
-  <!-- ML-110 make cancel button go to dashboard : http://stackoverflow.com/questions/11985810/ -->
+
+
+<!-- need to split out the form controls so we can re-use them in the inline Achievement Editing -->
+<div class="clearfix">
+  <%= button_tag(type: 'submit', class: 'btn btn-primary pull-right') do %>
+    <span class="icon-checkmark"></span>
+  <% end %>
   <%= link_to "Cancel", dashboard_path, class: 'button secondary-button cancel', 
       id: 'tracker_cancel' %>
+</div>
 
-</footer>
+<div class='new-tracker-form'>
+  <%= render "shared/error_messages", :target => resource %>  
+
+</div>
