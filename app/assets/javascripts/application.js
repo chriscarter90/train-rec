@@ -1,6 +1,9 @@
 //= require_tree .
 //= require lightbox-2.6.min
 //= require jquery_ujs
+//= require bootstrap
+//= require fileinput
+//= require flat-ui-pro
 
 // $(".image-upload-fake").click( function (){
 //   handleFakeImageUpload($(this));
