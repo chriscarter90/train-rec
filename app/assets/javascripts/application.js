@@ -43,6 +43,8 @@ $(function(){
     $("#achievement_name").show();
     // console.log("NOT Dashboard");
   }
+
+  $("select").select2({dropdownCssClass: 'dropdown-inverse'});
 })
 
 function achievementFormHide() {
@@ -82,5 +84,3 @@ function setFocusSliderColor(e) {
               + ')'
   );
 }
-
-$("select").select2({dropdownCssClass: 'dropdown-inverse'});
