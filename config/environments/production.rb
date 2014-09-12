@@ -31,6 +31,7 @@ Progress360::Application.configure do
 
   # Generate digests for assets URLs.
   config.assets.digest = true
+  config.assets.debug = true
 
   config.assets.manifest = Rails.root.join("public/assets")
 
