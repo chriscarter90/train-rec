@@ -5,17 +5,21 @@
 <div class="l-unauthenticated">
   <div class="unauthenticated-wrapper">
     <%= form_tag sessions_path do %>
-      <h1 class="heading">Log In</h1>
-      <div class="field">
-        <%= label_tag :email %>
-        <%= text_field_tag :email, params[:email], autocorrect: 'off', autocapitalize: 'off', autofocus: true %>
+
+
+
+      <h4 class="heading">Log In</h4>
+      <div class="form-group">
+        <%= text_field_tag :email, params[:email], autocorrect: 'off', autocapitalize: 'off', autofocus: true,
+        :placeholder => 'Email',
+        :required => true,
+        :class => 'form-control' %> 
       </div>
-      <div class="field">
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
+      <div class="form-group">
+        <%= password_field_tag :password, 'Password', :class => 'form-control' %>
       </div>
       <div class="actions">
-        <%= submit_tag "Log In", class: 'button' %>
+        <%= submit_tag "Log In", class: 'btn btn-primary pull-right' %>
       </div>
     <% end %>
   </div>
