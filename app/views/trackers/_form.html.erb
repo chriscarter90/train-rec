@@ -1,13 +1,13 @@
 <div class="form-group">
-
-  <%= f.label :name, class: 'mandatory' %>
   <%= f.text_field :name, 
-      :placeholder => 'What is the title of your tracker?',
+      :placeholder => 'Give your tracker a short name - two or three words',
       :required => true,
       :class => 'form-control' %> 
-  <%= f.label :description %>
-  <%= f.text_area :description, :placeholder => 'Describe the kind of thing you might log against this tracker', class: "form-control", rows: 5 %>
-  <%= f.label :focus_id, "Focus" %>
+</div>
+<div class="form-group">
+  <%= f.text_area :description, :placeholder => 'Describe the tracker in more detail. What kind of things might you log? What are you trying to achieve?', class: "form-control", rows: 5 %>
+</div>
+<div class="form-group">
   <%= f.select :focus_id,
                  options_for_select(Focus.select_options),
                  {},

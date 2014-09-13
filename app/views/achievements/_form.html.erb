@@ -5,17 +5,6 @@
 
 <!-- need to split out the form controls so we can re-use them in the inline Achievement Editing -->
 <div class="clearfix">
-  <div class="pull-left">
-    <div class="fileinput fileinput-new" data-provides="fileinput">
-      <span class="btn btn-primary btn-info btn-file">
-        <span class="fileinput-new"><span class="fui-photo"></span></span>
-        <span class="fileinput-exists"><span class="fui-gear"></span>  Change</span>
-        <%= f.file_field :asset %>
-      </span>
-      <span class="fileinput-filename"></span>
-      <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">×</a>
-    </div>
-  </div>
 
   <%= button_tag(type: 'submit', class: 'btn btn-primary pull-right') do %>
     <span class="icon-checkmark"></span>

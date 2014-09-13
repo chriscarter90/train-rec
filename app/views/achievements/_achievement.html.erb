@@ -1,15 +1,13 @@
 <li class="activity">
   <%= form_for achievement, remote: true do |f| %>
-    <span class="label label-info pull-right achievement-date"><%= achievement.created_at %></span>
+    <span class="label pull-right achievement-date"><%= achievement.created_at %></span>
 
     <p><%= achievement.description %></p>
 
-    <!-- Display uploaded image thumbnail -->
-    <%= link_to achievement.asset.url, data: { lightbox: "achievement_#{achievement.id}"}, rel: "lightbox" do %>
-      <%= image_tag achievement.asset.thumb.url, class: 'img-thumbnail' %>
-    <% end if achievement.asset.url %>
-
     <div class="clearfix">
+      <% if achievement.tracker.focus %>
+        <span class="label label-info"><%= achievement.tracker.focus.name %></span>
+      <% end %>
       <div class="pull-right">
         <%= link_to achievement_path(achievement), :method => :delete, remote: true, data: { confirm: "Are you sure you want to delete this log?" } , class: 'btn-action' do %>
           <span class="fui-trash"></span>
