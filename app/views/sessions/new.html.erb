@@ -13,10 +13,10 @@
         <%= text_field_tag :email, params[:email], autocorrect: 'off', autocapitalize: 'off', autofocus: true,
         :placeholder => 'Email',
         :required => true,
-        :class => 'form-control' %> 
+        :class => 'form-control' %>
       </div>
       <div class="form-group">
-        <%= password_field_tag :password, 'Password', :class => 'form-control' %>
+        <%= password_field_tag :password, nil, :class => 'form-control', placeholder: "Password" %>
       </div>
       <div class="actions">
         <%= submit_tag "Log In", class: 'btn btn-primary pull-right' %>
