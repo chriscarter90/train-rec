@@ -7,10 +7,12 @@
           <%= link_to "All", dashboard_path %>
         </li>
         <li class="divider"></li>
-        <% current_user.trackers.untrashed.each do |t| %>
-          <li>
-            <%= link_to t.name, new_tracker_achievement_path(t) %>
-          </li>
+        <% current_user.trackers.all.each do |t| %>
+          <% if t.trashed_at == nil %>
+            <li>
+              <%= link_to t.name, new_tracker_achievement_path(t) %><%= t.trashed_at %><%= t.learner_id %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </div>
