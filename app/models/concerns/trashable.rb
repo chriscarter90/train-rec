@@ -13,7 +13,7 @@ module Trashable
     end
 
     def untrashed
-      scoped {
+      unscoped {
         where("trashed_at IS NULL")
       }
     end
