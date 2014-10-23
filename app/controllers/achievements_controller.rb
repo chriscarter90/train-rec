@@ -48,7 +48,7 @@ class AchievementsController < InheritedResources::Base
   end
 
   def collection
-    @achievements ||= end_of_association_chain.untrashed.focus(params[:focus_id]).decorate
+    @achievements ||= end_of_association_chain.focus(params[:focus_id]).decorate
   end
 
 end

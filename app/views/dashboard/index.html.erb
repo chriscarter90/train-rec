@@ -5,7 +5,7 @@
     <hr>
 
     <ul class="activity-list">
-      <%= render @achievements %>
+      <%= render current_user.achievements.where(trashed_at: nil) %>
     </ul>
   </div>
 </div>
