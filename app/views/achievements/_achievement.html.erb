@@ -1,6 +1,6 @@
 <li class="activity">
   <%= form_for achievement, remote: true do |f| %>
-    <span class="label pull-right achievement-date"><%= achievement.created_at %></span>
+    <span class="label pull-right achievement-date"><%= achievement.created_at.to_formatted_s(:short) %></span>
 
     <p><%= achievement.description %></p>
 
